@@ -3,8 +3,10 @@ function [ c ] = bisection_root( f,a,b, e )
 %bisection method.
     assert( a < b )
     assert( sign(f(a)) ~= sign(f(b)) )
+    i = 0;
     
     while (b-a)/2 > e
+        i=i+1;
         c=(a+b)/2;
 
         %Display a,c,b, f(c) and (b-a)/2
@@ -17,7 +19,7 @@ function [ c ] = bisection_root( f,a,b, e )
         end
         
     end
-    
+    disp(i)
     
 end
 

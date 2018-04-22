@@ -1,13 +1,14 @@
-function [p1] = untitled(f,p0,p1,eps,nmax)
+function [p1] = secant(f,p0,p1,eps,nmax)
     for i = 0:nmax
-    if(abs(p1-p0) < eps) 
-       break
+        if(abs(p1-p0) < eps) 
+           break
+        end
+        a = (f(p1)-f(p0))./(p1-p0);
+        b = f(p0) - a * p0;
+        p0 = p1;
+        p1 = -b/a;
     end
-    a = (f(p1)-f(p0))./(p1-p0)
-    b = f(p0) - a * p0
-    p0 = p1
-    p1 = -b/a
-    end
+    %disp(i)
 end
 
 %{   
