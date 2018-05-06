@@ -1,0 +1,13 @@
+function [evaluation] = evaluate_in_Newton_form(coeffs,xs,x)
+%evaluation = coeffs(1);
+evaluation = 0;
+
+for i = 1:size(coeffs)
+    for j = 1:i
+        x_terms = x_terms .* (x - xs(j));
+    end
+    evaluation = evaluation + coeffs(i) .* x_terms;
+end
+
+end
+
