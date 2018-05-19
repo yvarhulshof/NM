@@ -9,6 +9,8 @@ coeffs_y_tildes = divided_diffs(xs,y_tildes);
 %plot the polynomial interpolation on interval [-0.25, 5.25] with linear
 %spacing of 0.01
 
+for i 
+
 xs2 = -0.25:0.01:5.25;
 interpolated_ys = zeros(1,551);
 interpolated_y_tildes = zeros(1,551);

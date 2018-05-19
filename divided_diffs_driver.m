@@ -29,16 +29,19 @@ disp(coeffs_y_tildes)
 disp('The table of divided differences is: ')
 disp(D)
 
-hold on
-plot(xs,ys,'x')
-plot(xs,y_tildes,'o')
-plot(xs2,interpolated_ys)
-plot(xs2,interpolated_y_tildes)
+
+ hold on
+ plot(xs,ys,'x')
+ plot(xs,y_tildes,'o')
+ plot(xs2,interpolated_ys)
+ plot(xs2,interpolated_y_tildes)
 
 
 %plots the given x and their y evaluations to check corectness
-%interpolated_ys = zeros(1,11);
-%for i = 1:numel(xs)
-%   interpolated_ys(i) = evaluate_in_Newton_form(coeffs,xs,xs(i));
-%end
+interpolated_ys = zeros(1,11);
+for i = 1:numel(xs)
+   interpolated_ys(i) = evaluate_in_Newton_form(coeffs_ys,xs,xs(i));
+end
+
+plot(xs,interpolated_ys,'x')
 
